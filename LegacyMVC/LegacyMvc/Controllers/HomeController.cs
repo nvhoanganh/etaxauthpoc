@@ -35,6 +35,7 @@ namespace ETaxPoc.Controllers
             var isAuthenticated = HttpContext.User.Identity.IsAuthenticated;
             if (isAuthenticated)
             {
+                TempDataMessage("message", "success", $"Hi {HttpContext.User.Identity.Name}!!!");
                 return View("Authenticated", "Home");
             }
             return View();

@@ -49,6 +49,8 @@ namespace NewDotNetApi
 
             app.UseRouting();
 
+            app.UseCors();
+
             app.UseMiddleware<JwtMiddleware>(); 
 
             app.UseEndpoints(endpoints =>
