@@ -49,7 +49,11 @@ namespace NewDotNetApi
 
             app.UseRouting();
 
-            app.UseCors();
+            app.UseCors(config => config
+                                .AllowAnyOrigin()
+                                .AllowAnyHeader()
+                                .AllowAnyMethod()
+            );
 
             app.UseMiddleware<JwtMiddleware>(); 
 
