@@ -28,6 +28,7 @@ namespace NewDotNetApi
         {
 
             services.AddControllers();
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "NewDotNetApi", Version = "v1" });
@@ -48,7 +49,7 @@ namespace NewDotNetApi
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseMiddleware<JwtMiddleware>(); 
 
             app.UseEndpoints(endpoints =>
             {
