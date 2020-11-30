@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+<style>
+</style>
+<div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">ETax Legacy</a>
+            </div>
+        </div>
+    </nav>
+    <div class="row centered-form">
+        @if (TempData["message"] != null)
+        {
+            string alertType = "alert alert-" + TempData["alertType"];
+            <div class="@alertType">
+                @TempData["message"]
+            </div>
+        }
+        </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Log-in
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form" asp-action="Login" asp-controller="Home" method="post">
+                        <div class="form-group">
+                            <input type="email" name="Email" class="form-control input-sm" placeholder="Email Address">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" name="Password" class="form-control input-sm" placeholder="Password">
+                        </div>
+                        <input type="submit" value="Login" class="btn btn-info btn-block">
+                    </form>
+                </div>
+    </div>
+</div>
