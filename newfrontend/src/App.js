@@ -8,7 +8,7 @@ function App() {
     // todo;
     // call http://localhost:5726/Home/Token 
     // if 200 ok=> store the returned token in local storage
-    // then call  
+    // then call http://localhost:5000 
   }, []);
 
   return (
